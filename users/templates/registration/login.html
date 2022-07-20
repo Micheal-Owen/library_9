@@ -24,8 +24,8 @@
 
 {% block content %}
 <body class="text-center" style="background-image: url('{% static "img/lib4.JPG" %}')" no-repeat center center-cover;>
-  <div class="card mx-auto" style="width:30rem;">
-    <div class="showcase-container container">
+  <div class="showcase-container container mx-auto">
+    <div class="card" style = "width:30rem";>
       <form class="form" method="POST" action="{% url 'users:login' %}">
         {% csrf_token %} 
         {{ form|crispy }}

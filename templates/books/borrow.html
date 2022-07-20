@@ -1,4 +1,4 @@
-{% include 'books\hamburger.html' %}
+{% include 'books/hamburger.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -52,31 +52,16 @@
                                 </ol>
                                 <br>
                                 {% if b.status %}
-<<<<<<< HEAD
                                     
-                                    <p> The book should be picked within 6 hours </p>
-                                    <p> Return date : {{ return_date }}</p>
+                                    <p class="text-white"> The book should be picked within 6 hours </p>
+                                    <p class="text-white"> Return date : <span class="text-danger">{{ return_date }}</span></p>
                                     <p class="text-warning"> Status : <span class="text-success">Available</span>  </p>
                             
                                     <a href="{% url 'books:confirm_borrow' b.id %}">{{ b }}
-=======
-                                    <p class="text-warning"> Status : <span class="text-success">Available</span>  </p>
-                                    <a href="{% url 'books:confirm_borrow' b.id %}">
->>>>>>> dcb92ba7be352922f7c9601b9920ece5d3b8ccd5
                                         <button class="btn mb-3 btn-outline-warning float-right btn-lg border rounded">BORROW</button>
                                     <!-- the button was put inside the href link , why!! -->
                                     </a>
                                 {% else %}
-<<<<<<< HEAD
-                                
-                                
-                                
-
-                                <p class="text-warning"> Status : <span class="text-danger">Unavailable </span> </p>
-                            
-                                        <button class="btn mb-3 btn-outline-warning float-right btn-lg border rounded disabled">BORROW</button>
-                                    <!-- the button was put inside the href link , why!! -->
-=======
                                     <p class="text-warning"> Status : <span class="text-danger">Unavailable </span> </p>
                                     <button class="btn mb-3 btn-outline-warning float-right btn-lg border rounded disabled" data-toggle="modal" data-target="#modalCenter" type="button">
                                         BORROW
@@ -100,7 +85,6 @@
                                           </div>
                                         </div>
                                     </div>
->>>>>>> dcb92ba7be352922f7c9601b9920ece5d3b8ccd5
                                 {% endif %}
                             </div>
                         </div>
