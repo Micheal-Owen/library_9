@@ -1,14 +1,12 @@
 # Library_9
 
-<<<<<<< HEAD
 Library system
 
 The library system is an web application that houses an electronic library system.
-=======
+
 Library catalog
 
 The library catalog is an web application that houses an electronic library system.
->>>>>>> 2aa6b35fd3b42faee288b50626b5c845e375a7eb
 The system was developed to avail students access to a variety of educational books with as much ease as possible.
 
 source: http://library_9/?  , http://127.0.0.1:8000/
