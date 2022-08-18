@@ -1,0 +1,59 @@
+{% include 'books/profile.html' %}
+<!DOCTYPE html>
+    <!-- <table>
+        <tr>
+            <th>Book</th>
+            <th>Return date</th>
+        </tr>
+        {% for bk in my_book %}
+            <tr>
+                <td>{{ bk.book_name }}</td>
+                <td>{{ bk.date_of_return }}</td>
+            </tr>
+        {% endfor %}
+    </table> -->
+
+<html>
+   <head>
+      <style>
+         #books{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid rgb(0, 0, 0);
+         }
+         #books th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #ddd;
+            border: 1px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+         }
+         #books tr:nth-child(even){background-color: #f2f2f2;}
+         td {
+            border-bottom: 1px solid rgb(0, 0, 0);
+         }
+         td:hover {background-color: #ddd;}
+      </style>
+   </head>
+
+   <body>
+    {% block content %}
+      <h1 class="text-center">Returned Books</h1>
+      <table id="books">
+         <tr>
+            <th>Book</th>
+            <th>Return date</th>
+         </tr>
+        {% for bk in my_book %}
+            <tr>
+                <td>{{ bk.book_name }}</td>
+                <td>{{ bk.date_of_return }}</td>
+            </tr>
+        {% endfor %}
+      </table>
+    {% endblock content %}
+   </body>
+</html>
+
