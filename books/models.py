@@ -49,6 +49,7 @@ class Borrower(models.Model):
 def get_return_date():
   return datetime.now() + timedelta(days = 14)
 
+
 """Function to define the amount of time for the user to pick the book"""
 def book_time_limit():
   return datetime.now() + timedelta(hours=6) 
@@ -83,7 +84,13 @@ class RequestedBook(models.Model):
   def __str__(self):
     return str(self.book_name) + '(' + str(self.borrower) + ')'
 
+  # def number_of_requested_books(self):
+  #   if self.book_request.count() < 3:
+  #     return self.book_request.count()
+  #   else:
+  #     return "Unable to borrow more than two books."
 
+  
 class Returned_book(models.Model):
   borrower = models.ForeignKey(Borrower,on_delete= models.CASCADE)
   book_name = models.ForeignKey(IssuedBook,on_delete= models.CASCADE)
@@ -97,3 +104,7 @@ class Returned_book(models.Model):
   def __str__(self):
     return self.user
 
+
+  
+
+  

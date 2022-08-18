@@ -61,6 +61,7 @@ def confirm_borrow(request,id):
     context = { 'return_date':requested_book.return_date }
     return render(request, 'books/borrow.html', context)
 
+    # return redirect('books:home')
 
 
 """Defining views for the profile page"""
@@ -88,21 +89,25 @@ def borrowed_book(request):
     context = {'requested_book':requested_book, 'issuedate':issuedate, 'return_date':return_date, 'li':li}
         
     return render(request, 'books/borrowed_book.html', context)
-    
 
 """Views for the returned book"""
 @login_required
 def returned_book(request):
     my_book = Returned_book.objects.all()
+
     return render(request, 'books/returned_book.html')
 
 """Views for notifications"""
 @login_required
 def notifications(request):
+
+
+    # user = User.objects.all()
+    # guy = User.objects.get(username = request.user.username)
+    # user = User.objects.all()
     notice = Returned_book.objects.filter(user = request.user)
 
     if request.user in notice:
-
         if notice.date_of_return > notice.return_date + timedelta(hours=2):
             context = {'fine5000': 'you have a fine of 5000 UGX'}
             return render(request,'books/notifications.html',context)
@@ -125,6 +130,7 @@ def notifications(request):
 def fines(request):
     if request.method == 'POST':
         pass
+
     else:
         pass
     

@@ -46,17 +46,29 @@
                                 <ol class="text-white text-monospace">
                                     {% for book in all_books %}
                                         {% if book.category == b.category and book != b %}
+<<<<<<< HEAD
                                             <li><a href="{% url 'books:borrow' book.id %}"> {{ book }} </a></li>
+=======
+                                            <li>{{ book }}</li>
+>>>>>>> 2aa6b35fd3b42faee288b50626b5c845e375a7eb
                                         {% endif %}
                                     {% endfor %}
                                 </ol>
                                 <br>
                                 {% if b.status %}
                                     
+<<<<<<< HEAD
                                     <p class="text-light"> The book should be picked within 6 hours </p>
                                     <!-- <p class="text-light"> Return date : {{ return_date }}</p> -->
                                     <p class="text-warning"> Status : <span class="text-success">Available</span>  </p>
                                     <a href="{% url 'books:confirm_borrow' b.id %}">
+=======
+                                    <p class="text-white"> The book should be picked within 6 hours </p>
+                                    <p class="text-white"> Return date : <span class="text-danger">{{ return_date }}</span></p>
+                                    <p class="text-warning"> Status : <span class="text-success">Available</span>  </p>
+                            
+                                    <a href="{% url 'books:confirm_borrow' b.id %}">{{ b }}
+>>>>>>> 2aa6b35fd3b42faee288b50626b5c845e375a7eb
                                         <button class="btn mb-3 btn-outline-warning float-right btn-lg border rounded">BORROW</button>
                                     <!-- the button was put inside the href link , why!! -->
                                     </a>
@@ -93,6 +105,7 @@
         </div>
     {% endfor %}
 
+<<<<<<< HEAD
 <script>
     const modal = document.querySelector(".modal");
     const btn = document.querySelector(".btn");
@@ -112,6 +125,8 @@
     closeButton.addEventListener("click", toggleModal);
     window.addEventListener("click", windowOnClick);
 </script>
+=======
+>>>>>>> 2aa6b35fd3b42faee288b50626b5c845e375a7eb
     
 <script src='{% static "https://code.jquery.com/jquery-3.3.1.slim.min.js"%}' integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 crossorigin="anonymous"></script>
